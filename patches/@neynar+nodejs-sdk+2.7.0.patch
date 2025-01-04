@@ -1,0 +1,24 @@
+diff --git a/node_modules/@neynar/nodejs-sdk/build/index.js b/node_modules/@neynar/nodejs-sdk/build/index.js
+index 39c43a8..866e0ca 100644
+--- a/node_modules/@neynar/nodejs-sdk/build/index.js
++++ b/node_modules/@neynar/nodejs-sdk/build/index.js
+@@ -15,13 +15,13 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.Configuration = void 0;
+-const semver = require("semver");
+-const requiredVersion = require("../package.json").engines.node;
++// const semver = require("semver");
++// const requiredVersion = require("../package.json").engines.node;
+ // Check Node.js version before requiring/doing anything else
+-if (!semver.satisfies(process.version, requiredVersion)) {
+-    console.error(`Unsupported Node.js version! Your version: ${process.version}. Required version: ${requiredVersion}.`);
+-    process.exit(1);
+-}
++// if (!semver.satisfies(process.version, requiredVersion)) {
++//     console.error(`Unsupported Node.js version! Your version: ${process.version}. Required version: ${requiredVersion}.`);
++//     process.exit(1);
++// }
+ __exportStar(require("./clients"), exports);
+ __exportStar(require("./utils"), exports);
+ __exportStar(require("./types"), exports);
