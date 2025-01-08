@@ -110,7 +110,14 @@ export default function Home() {
   const onDownload = useCallback(async () => {
     if (!isValid) return;
 
-    const client = new NeynarAPIClient({ apiKey });
+    const client = new NeynarAPIClient({
+      apiKey,
+      baseOptions: {
+        headers: {
+          "x-neynar-experimental": true,
+        },
+      },
+    });
     const allResults: Cast[] = [];
     let cursor: string | undefined;
 
