@@ -28,6 +28,9 @@ const convertToCSV = (data: Cast[]): string => {
     "author.verifications",
     "author.verifiedEthAddresses",
     "author.powerBadge",
+    "author.profile.location.latitude",
+    "author.profile.location.longitude",
+    "author.experimental.neynar_user_score",
     "thread_hash",
     "parent_hash",
     "parent_url",
@@ -56,6 +59,9 @@ const convertToCSV = (data: Cast[]): string => {
         cast.author.verifications.join(","),
         cast.author.verified_addresses.eth_addresses.join(","),
         cast.author.power_badge,
+        cast.author.profile.location?.latitude,
+        cast.author.profile.location?.longitude,
+        cast.author.experimental?.neynar_user_score,
         cast.thread_hash,
         cast.parent_hash,
         cast.parent_url,
@@ -97,9 +103,7 @@ const downloadCSV = (csvContent: string, filename: string): void => {
 
 export default function Home() {
   const [channelId, setChannelId] = useState<string>("");
-  const [apiKey, setApiKey] = useState<string>(
-    ""
-  );
+  const [apiKey, setApiKey] = useState<string>("");
   const [pages, setPages] = useState<number>(10);
 
   const [showFetchedData, setShowFetchedData] = useState<boolean>(false);
